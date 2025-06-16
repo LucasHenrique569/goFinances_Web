@@ -4,28 +4,27 @@
     padding: 0;
 }
 
-header, main {
-    border: 1px solid #000;
-}
-
 header {
-    height: 30dvh;
-    padding-top: 50px;
+    height: 35dvh;
+    padding-top: 30px;
     background: #11588f;
 }
 
 main {
-    min-height: 70dvh;
-    background: #F0F0F0;
+    height: 65dvh;
+    background: #EEEEEE;
+    padding-top: 125px;
 }
 
-#initial-user-saudation, header, #cards-container {
+#initial-user-saudation, #header-section, #cards-container {
     display: flex;
 }
 
-header {
-    justify-content: space-around;
-    align-items: start;
+#header-section {
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
 }
 
 #initial-user-saudation {
@@ -39,7 +38,6 @@ header {
 }
 
 #new-transaction-button {
-    color: #000;
     text-decoration: none;
     height: fit-content;
     padding: 10px;
@@ -49,40 +47,173 @@ header {
     background-color: #4c99d4;
 }
 
+#new-transaction-button:hover {
+    background-color: #9ccbee;
+    color: #000;
+
+}
+
 #cards-container {
-    gap: 20px;
-    padding: 10px;
-    z-index: 1;
-    width: fit-content;
+    gap: 10px;
+    width: 70%;
     margin: 0 auto;
-    margin-top: -125px;
+    margin-top: -245px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cards-container .card:last-of-type{
+    background: #cc8b12;
+    color: #FFF;
 }
 
 .card{
-    width: 350px;
+    width: 33%;
     height: 150px;
-    border: 1px solid #000;
     background: #FFF;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .header-card {
-    border: 1px solid #000;
     height: fit-content;
     display: flex;
+    justify-content: space-between;
+}
+
+.header-card p {
+    font-weight: bold;
+    font-size: 1em;
 }
 
 .footer-card {
-    border: 1px solid #000;
-    align-self: flex-end;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
 }
 
+.footer-card p:first-of-type {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.footer-card p:last-of-type {
+    color: #888888; 
+    font-size: 1em;
+    font-weight: bold;
+}
 
 #table- {
     border: 1px solid #000;
     margin: 0 auto;
+    margin-top: 50px;
+    width: 70%;
+}
+
+#table-header {
+    text-align: left;
+}
+
+#table-header th{
+    /* border: 1px solid #000; */
+    padding-bottom: 15px;
+}
+
+tbody td {
+    padding-bottom: 7px;
+}
+
+#register-modal {
+    display: none;
+    position: fixed;            /* Fixo à viewport */
+    z-index: 1000;              /* Sobreposto a tudo */
+    left: 0; top: 0;
+    width: 100%; 
+    height: 100%; /* Cobertura total */
+    background: rgba(0,0,0,0.5);/* Fundo escuro semi-transparente */
+}
+
+#register-modal.show, .modal-content, #transactions-buttons-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-header {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding-bottom: 20px;
+    /* border: 1px solid #000; */
+}
+
+.modal-content {
+    flex-direction: column;
+}
+
+.modal-content {
+    border: 1px solid #000;
+    background-color: #FFF;
+    width: 450px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.modal-content input, button {
+    background: #EEEEEE;
+}
+
+.user-inputs, #transactions-buttons-container, #confirm-new-transaction-button {
+    width: 80%;
+    margin-top: 10px;
+}
+
+.close-modal-button {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#transactions-buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#transactions-buttons-container button {
+    width: 48%;
+    gap: 20px;
+}
+
+.user-inputs, #confirm-new-transaction-button{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+#transactions-buttons-container button {
+    padding: 15px;
+    /* border: 2px solid #000; */
+    border-radius: 10px;
+}
+
+#confirm-new-transaction-button {
+    color: #FFF;
+    background-color: #008000;
+    font-weight: bold;
+}
+
+#confirm-new-transaction-button:hover {
+    background-color: #77DD77;
+    color: #000;
+}
+
+#confirm-new-transaction-button, #transactions-buttons-container button {
+    cursor: pointer;
+}
+
+.transactions-buttons.active {
+    border: 5px solid #000;
 }

@@ -9,23 +9,58 @@
 </head>
 <body>
     <header>
-        <div id="initial-user-saudation">
-            <img src="https://avatars.githubusercontent.com/u/188273989?s=400&u=ac39839d3f84862e5623729de5989c801d7b00e2&v=4" alt="nada aqui" id="user-photo">
-            <p style="padding-left: 15px;">
-                Olá, 
-                <br><span style="font-weight: bold;">Estudante!</span>
-            </p>
-        </div>
+        <div id="header-section">
+            <div id="initial-user-saudation">
+                <img src="./assets/images/foto_de_perfil.jpg" alt="user-photo" id="user-photo">
+                <p style="padding-left: 15px;">
+                    Olá,
+                    <br><span style="font-weight: bold;">Estudante!</span>
+                </p>
+            </div>
+            <a href="#" id="new-transaction-button">Nova transação</a>
 
-        <a href="modal.html" id="new-transaction-button" target="_blank">Nova transação</a>
+            <section id="register-modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div id="modal-header">
+                        <h1>Cadastrar Transação</h1>
+                        <span class="close-modal-button">&times;</span>
+                    </div>
+
+                    <input type="text" placeholder="Titulo da transação" class="user-inputs">
+                    <input type="number" step="any" placeholder="Valor" class="user-inputs">
+                    
+                    <div id="transactions-buttons-container">
+                        <button type="button" style="background-color: #B2FBA5;" class="transactions-buttons">
+                            <i class="fa-solid fa-circle-up fa-2x" style="color: #008000;"></i>
+                            Entrada
+                        </button>
+                        
+                        <button type="button" style="background-color: #FFCCCB;" class="transactions-buttons">
+                            <i class="fa-solid fa-circle-down fa-2x" style="color: #FF0000;"></i>
+                            Saída
+                        </button>
+                    </div>
+
+                    <input type="text" placeholder="Categoria: Compra ou Venda" class="user-inputs">
+
+                    <button type="submit" id="confirm-new-transaction-button">
+                        Cadastrar
+                    </button>
+                </div>
+
+            </section>
+        </div>
     </header>
 
+    <!-- Arrumar os cards depois, cores dos icones e o card total -->
     <main>
         <section id="cards-container">
             <div class="card">
                 <div class="header-card">
                     <p>Entradas</p>
-                    <i class="fa-solid fa-circle-up"></i>
+                    <i class="fa-solid fa-circle-up fa-2x" style="color: #008000;"></i>
                 </div>
 
                 <div class="footer-card">
@@ -36,31 +71,31 @@
 
             <div class="card">
                 <div class="header-card">
-                    <p>Entradas</p>
-                    <i class="fa-solid fa-circle-up"></i>
+                    <p>Saídas</p>
+                    <i class="fa-solid fa-circle-down fa-2x" style="color: #FF0000;"></i>
                 </div>
 
                 <div class="footer-card">
-                    <p>R$ 17.300, 00</p>
-                    <p>Última entrada dia 13 de abril</p>
+                    <p> - R$ 4.300, 00</p>
+                    <p>Última saída dia 13 de abril</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="header-card">
-                    <p>Entradas</p>
-                    <i class="fa-solid fa-circle-up"></i>
+                    <p>Total</p>
+                    <i class="fa-solid fa-dollar-sign fa-2x"></i>
                 </div>
 
                 <div class="footer-card">
-                    <p>R$ 17.300, 00</p>
-                    <p>Última entrada dia 13 de abril</p>
+                    <p>R$ 13.000, 00</p>
+                    <p style="color: #FFF;">Última entrada dia 13 de abril</p>
                 </div>
             </div>
         </section>
 
         <table id="table-">
-            <thead>
+            <thead id="table-header">
                 <tr>
                     <th>Titulo</th>
                     <th>Preço</th>
@@ -99,5 +134,6 @@
         
     </main>
 
+    <script src="./assets/javascripts/modal.js"></script>
 </body>
 </html>
