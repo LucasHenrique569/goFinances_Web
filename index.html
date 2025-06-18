@@ -21,29 +21,28 @@
 
             <section id="register-modal">
 
-                <!-- Modal content -->
                 <div class="modal-content">
                     <div id="modal-header">
                         <h1>Cadastrar Transação</h1>
                         <span class="close-modal-button">&times;</span>
                     </div>
 
-                    <input type="text" placeholder="Titulo da transação" class="user-inputs">
-                    <input type="number" step="any" placeholder="Valor" class="user-inputs">
+                    <input type="text" maxlength="100" placeholder="Titulo da transação" class="user-inputs" id="new-transaction-title-input">
+                    <input type="text" placeholder="Valor: apenas números e use '.' para casas decimais" class="user-inputs" id="new-transaction-value-input">
                     
                     <div id="transactions-buttons-container">
-                        <button type="button" style="background-color: #B2FBA5;" class="transactions-buttons">
+                        <button type="button" style="background-color: #B2FBA5;" class="transactions-buttons" id="entry-button">
                             <i class="fa-solid fa-circle-up fa-2x" style="color: #008000;"></i>
                             Entrada
                         </button>
                         
-                        <button type="button" style="background-color: #FFCCCB;" class="transactions-buttons">
+                        <button type="button" style="background-color: #FFCCCB;" class="transactions-buttons" id="exit-button">
                             <i class="fa-solid fa-circle-down fa-2x" style="color: #FF0000;"></i>
                             Saída
                         </button>
                     </div>
 
-                    <input type="text" placeholder="Categoria: Compra ou Venda" class="user-inputs">
+                    <input type="text" maxlength="50" placeholder="Categoria" class="user-inputs" id="new-transaction-category-input">
 
                     <button type="submit" id="confirm-new-transaction-button">
                         Cadastrar
@@ -54,7 +53,6 @@
         </div>
     </header>
 
-    <!-- Arrumar os cards depois, cores dos icones e o card total -->
     <main>
         <section id="cards-container">
             <div class="card">
@@ -63,9 +61,8 @@
                     <i class="fa-solid fa-circle-up fa-2x" style="color: #008000;"></i>
                 </div>
 
-                <div class="footer-card">
-                    <p>R$ 17.300, 00</p>
-                    <p>Última entrada dia 13 de abril</p>
+                <div class="footer-card" id="entry-card">
+
                 </div>
             </div>
 
@@ -75,9 +72,8 @@
                     <i class="fa-solid fa-circle-down fa-2x" style="color: #FF0000;"></i>
                 </div>
 
-                <div class="footer-card">
-                    <p> - R$ 4.300, 00</p>
-                    <p>Última saída dia 13 de abril</p>
+                <div class="footer-card" id="exit-card">
+                    
                 </div>
             </div>
 
@@ -87,9 +83,8 @@
                     <i class="fa-solid fa-dollar-sign fa-2x"></i>
                 </div>
 
-                <div class="footer-card">
-                    <p>R$ 13.000, 00</p>
-                    <p style="color: #FFF;">Última entrada dia 13 de abril</p>
+                <div class="footer-card" id="total-card">
+                    
                 </div>
             </div>
         </section>
@@ -98,42 +93,21 @@
             <thead id="table-header">
                 <tr>
                     <th>Titulo</th>
-                    <th>Preço</th>
+                    <th>Valor</th>
                     <th>Categoria</th>
-                    <th>Total</th> 
+                    <th>Data</th> 
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Desenvolvimento de site</td>
-                    <td>R$ 12.000,00</td>
-                    <td>Vendas</td>
-                    <td>13/04/25</td>
-                </tr>
-
-                <tr>
-                    <td>Compras</td>
-                    <td>R$ 1.000,00</td>
-                    <td>Compras</td>
-                    <td>13/04/25</td>
-                </tr>
-
-                <tr>
-                    <td>Desenvolvimento de site</td>
-                    <td>R$ 12.000,00</td>
-                    <td>Vendas</td>
-                    <td>13/04/25</td>
-                </tr>
+                
             </tbody>
-
-
-        </table>
-        
-
-        
+        </table>        
     </main>
 
     <script src="./assets/javascripts/modal.js"></script>
+    <script src="./assets/javascripts/registerNewTransaction.js"></script>
+    <script src="./assets/javascripts/transactionsList.js"></script>
+    <script src="./assets/javascripts/updateTotalCards.js"></script>
 </body>
 </html>
