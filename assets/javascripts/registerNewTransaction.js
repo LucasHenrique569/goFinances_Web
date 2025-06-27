@@ -4,7 +4,7 @@ let selectedButton = '';
 const entryButton = document.getElementById('entry-button');
 const exitButton = document.getElementById('exit-button');
 
-
+// Verifica qual é o tipo da transação, uma entrada ou saída, para depois adicionarmos essa informação a nova transação
 entryButton.addEventListener('click', function () {
     selectedButton = 'Entrada';
 });
@@ -13,7 +13,7 @@ exitButton.addEventListener('click', function () {
     selectedButton = 'Saída';
 });
 
-
+// Verifica se o formulário está com dados válidos antes de chamar a função que se conecta a api e adiciona uma nova transação
 document.getElementById('confirm-new-transaction-button').addEventListener('click', async function () {
     const transactionTitle = document.getElementById('new-transaction-title-input').value.trim();
     const transactionValue = document.getElementById('new-transaction-value-input').value.trim();
@@ -41,7 +41,7 @@ document.getElementById('confirm-new-transaction-button').addEventListener('clic
     alert('Nova transação cadastrada com sucesso !!!');
 })
 
-
+// Função que chama a api e tenta adicionar um nova transação
 async function addNewTransaction(title, value, transactionType, Category) {
     const newTransaction = {
         titulo: title,

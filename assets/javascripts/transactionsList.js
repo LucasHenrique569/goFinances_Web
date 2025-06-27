@@ -1,13 +1,15 @@
 
-
+// Função busca as transações no banco de dados e adiciona elas a tabela no html
 async function loadTransactions() {
     try {
         const response = await fetch('http://localhost:3000/api/v1/transacoes');
         const data = await response.json();
 
+        // Pega uma referência para a tabela no html e limpa o conteúdo da mesma
         const tbody = document.querySelector('#table- tbody');
         tbody.innerHTML = "";
 
+        // Cria uma nova linha na tabela para cada transação cadastrada no banco
         data.forEach(transaction => {
             const line = document.createElement("tr");
 
