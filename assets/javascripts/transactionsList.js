@@ -1,13 +1,16 @@
 
-
+// Função que busca todas as transações cadastradas e insere as mesmas na tabela no HTML
 async function loadTransactions() {
     try {
+        // Busca os dados da API
         const response = await fetch('http://localhost:3000/api/v1/transacoes');
         const data = await response.json();
 
+        // Pego uma referência para a tabela no HTML e zero o conteúdo da mesma
         const tbody = document.querySelector('#table- tbody');
         tbody.innerHTML = "";
 
+        // Crio uma nova linha na tabela no HTML para cada tupla retornada da API
         data.forEach(transaction => {
             const line = document.createElement("tr");
 
@@ -44,7 +47,7 @@ async function loadTransactions() {
             tbody.appendChild(line);
         });
     } catch (err) {
-        console.error(err);
+        console.error('Erro ao tentar carregar todas as transações', err);
     }
 }
 

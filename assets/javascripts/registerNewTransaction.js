@@ -1,10 +1,10 @@
 
-let selectedButton = '';
+let selectedButton = ''; // Variável que armazena qual o tipo da nova transação
 
 const entryButton = document.getElementById('entry-button');
 const exitButton = document.getElementById('exit-button');
 
-
+// Verifica em qual botão o usuário clicou no modal, "Entrada ou saída"
 entryButton.addEventListener('click', function () {
     selectedButton = 'Entrada';
 });
@@ -14,6 +14,7 @@ exitButton.addEventListener('click', function () {
 });
 
 
+// Função que válida os dados passados no formulário do modal antes de fazer a chamada a API
 document.getElementById('confirm-new-transaction-button').addEventListener('click', async function () {
     const transactionTitle = document.getElementById('new-transaction-title-input').value.trim();
     const transactionValue = document.getElementById('new-transaction-value-input').value.trim();
@@ -36,12 +37,13 @@ document.getElementById('confirm-new-transaction-button').addEventListener('clic
         return;
     }
 
+    // Chama a função que cadastra uma nova transação
     addNewTransaction(transactionTitle, transactionValue, selectedButton, transactionCategory);
 
     alert('Nova transação cadastrada com sucesso !!!');
 })
 
-
+// Função que cadastra uma nova transação
 async function addNewTransaction(title, value, transactionType, Category) {
     const newTransaction = {
         titulo: title,
