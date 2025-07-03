@@ -11,9 +11,9 @@ header {
 }
 
 main {
-    height: 65dvh;
+    min-height: 65dvh;
     background: #EEEEEE;
-    padding-top: 125px;
+    padding: 125px 0;
 }
 
 #initial-user-saudation, #header-section, #cards-container {

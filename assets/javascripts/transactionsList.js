@@ -53,4 +53,5 @@ async function loadTransactions() {
 
 loadTransactions();
 
+// Tento simular uma atualização em tempo real dos dados 
 setInterval(loadTransactions, 10000);

@@ -109,6 +109,7 @@ async function handleUpdateTotalCard(){
 
     let total = 0;
 
+    // Verifica se a conversão deu certo e realiza a diferença entre as entradas e as saídas
     if (!Number.isNaN(totalEntryValueConverted) && !Number.isNaN(totalExitValueConverted)){
         total = totalEntryValueConverted - totalExitValueConverted;
     }
@@ -134,4 +135,5 @@ async function handleUpdateTotalCard(){
 
 handleUpdateTotalCard();
 
+// Tento simular uma atualização em tempo real dos dados
 setInterval(handleUpdateTotalCard, 10000);
