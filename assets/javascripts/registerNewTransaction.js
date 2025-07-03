@@ -38,7 +38,7 @@ document.getElementById('confirm-new-transaction-button').addEventListener('clic
     }
 
     // Chama a função que cadastra uma nova transação
-    addNewTransaction(transactionTitle, transactionValue, selectedButton, transactionCategory);
+    await addNewTransaction(transactionTitle, transactionValue, selectedButton, transactionCategory);
 
     alert('Nova transação cadastrada com sucesso !!!');
 })
